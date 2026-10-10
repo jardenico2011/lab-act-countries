@@ -1,9 +1,9 @@
-
 import { Outlet, useLocation } from "react-router";
 
 const CountriesLayout = () => {
   const { pathname } = useLocation();
-  const code = pathname.split("/")[2];
+  const segments = pathname.split("/").filter(Boolean);
+  const code = segments.length > 1 ? segments[1] : null;
 
   return (
     <div className="container mx-auto px-4 py-6">
