@@ -1,10 +1,9 @@
 
-import { Navigate, Outlet, useLocation, useParams } from "react-router";
+import { Navigate, Outlet, useParams } from "react-router";
 import COUNTRIES from "../data/countries";
 
 const RequireValidCountry = () => {
   const { countryCode } = useParams();
-  const location = useLocation();
 
   const exists = COUNTRIES.some(
     (c) => c.code === countryCode.toUpperCase()
